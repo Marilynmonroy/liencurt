@@ -3,7 +3,7 @@
 import { customAlphabet } from "nanoid";
 
 export default (path: string) => {
-  const nanoid = customAlphabet("1234567890abcdef", 10);
+  const nanoid = customAlphabet("1234567890abcdef", 5);
   const shortCode = nanoid();
 
   return {

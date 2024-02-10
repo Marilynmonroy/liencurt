@@ -58,7 +58,7 @@ export default async function handler(
     data: {
       originalUrl: result.originalUrl,
       shortUrl: result.shortUrl,
-      code: result.urlCode,
+      code: `LCurt.${result.urlCode}`,
     },
   });
 }
