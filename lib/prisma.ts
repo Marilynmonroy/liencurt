@@ -1,17 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient as Client } from "@prisma/client";
 
-export const prisma = new PrismaClient();
-
-async function main() {
-  // ... you will write your Prisma Client queries here
+declare global {
+  var prisma: Client | undefined;
 }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+export type PrismaClient = Client;
+export const prisma = global.prisma || new Client();
+
+if (process.env.NODE_ENV !== "production") global.prisma = prisma;
