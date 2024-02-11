@@ -14,6 +14,13 @@ const CopyBoard = ({ code }: CopyBoardProps) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (inputRef.current) {
+      navigator.clipboard.writeText(inputRef.current.value);
+      setIsCopy(true);
+    } else {
+      setIsCopy(false);
+    }
   };
 
   return (
@@ -22,21 +29,19 @@ const CopyBoard = ({ code }: CopyBoardProps) => {
         className="max-w-[600px] w-full justify-center my-4 mx-auto"
         onSubmit={handleSubmit}
       >
-        <Input
-          type="text"
-          className=""
-          value={`${process.env.NEXT_PUBLIC_API_URL}/api/${code}`}
-          ref={inputRef}
-          readOnly
-        />
-        <Button className="mt-2" size={"sm"}>
-          Copiar URL{" "}
-          {isCopy && (
-            <div className="absolute top-16 left-2 p-2 rounded-lg text-sm">
-              Url copiado
-            </div>
-          )}
-        </Button>
+        <div className="flex flex-col items-center">
+          <Input
+            type="text"
+            className="input-field"
+            value={`${process.env.NEXT_PUBLIC_API_URL}/api/${code}`}
+            ref={inputRef}
+            readOnly
+          />
+
+          <Button className="mt-5 p-5" size={"sm"}>
+            {isCopy ? "Url copiado" : "Copiar URL"}
+          </Button>
+        </div>
       </form>
     </div>
   );

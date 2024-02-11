@@ -8,6 +8,6 @@ export default (path: string) => {
 
   return {
     shortCode,
-    curtUrl: `http://${path}/api/${shortCode}`,
+    curtUrl: `http://${path}/api/Lcurt.${shortCode}`,
   };
 };

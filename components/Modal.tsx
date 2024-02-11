@@ -12,7 +12,7 @@ export default function Modal(props: ModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-      <div className="bg-white p-5 rounded-md">{props.children}</div>
+      <div className="bg-white p-6 rounded-md">{props.children}</div>
     </div>
   );
 }

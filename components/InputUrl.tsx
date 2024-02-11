@@ -75,7 +75,7 @@ const InputUrl = () => {
             onClick={closeModal}
             className="text-lg cursor-pointer place-self-end"
           />
-          <div className="p-5">{modalContent}</div>
+          <div className="p-bold-16 pl-2">Aqui tienes tu URL</div>
           <CopyBoard code={modalContent} />
         </div>
       </Modal>
