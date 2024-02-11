@@ -18,7 +18,7 @@ export default async function handler(
     });
   }
 
-  const { url }: DataUrl = req.body;
+  const { url }: DataUrl = JSON.parse(req.body);
   const host = req.headers.host;
   const { shortCode, curtUrl } = generateUrl(host!);
 
@@ -58,7 +58,7 @@ export default async function handler(
     data: {
       originalUrl: result.originalUrl,
       shortUrl: result.shortUrl,
-      code: `LCurt.${result.urlCode}`,
+      code: result.urlCode,
     },
   });
 }
