@@ -32,14 +32,14 @@ const CopyBoard = ({ code }: CopyBoardProps) => {
         <div className="flex flex-col items-center">
           <Input
             type="text"
-            className="input-field"
+            className="input-field dark:text-zinc-900"
             value={`${process.env.NEXT_PUBLIC_API_URL}/api/${code}`}
             ref={inputRef}
             readOnly
           />
 
           <Button className="mt-5 p-5" size={"sm"}>
-            {isCopy ? "Url copiado" : "Copiar URL"}
+            {isCopy ? "Url copiado!" : "Copiar URL"}
           </Button>
         </div>
       </form>

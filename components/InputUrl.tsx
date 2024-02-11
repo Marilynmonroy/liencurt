@@ -73,9 +73,11 @@ const InputUrl = () => {
         <div className="flex w-full flex-col">
           <IoMdClose
             onClick={closeModal}
-            className="text-lg cursor-pointer place-self-end"
+            className="text-lg cursor-pointer place-self-end dark:text-zinc-900"
           />
-          <div className="p-bold-16 pl-2">Aqui tienes tu URL</div>
+          <div className="p-bold-16 pl-2 dark:text-zinc-900">
+            Aqui tienes tu URL
+          </div>
           <CopyBoard code={modalContent} />
         </div>
       </Modal>
