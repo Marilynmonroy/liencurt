@@ -76,7 +76,7 @@ const InputUrl = () => {
             className="text-lg cursor-pointer place-self-end dark:text-zinc-900"
           />
           <div className="p-bold-16 pl-2 dark:text-zinc-900">
-            Aqui tienes tu URL
+            Aquí tienes tu URL
           </div>
           <CopyBoard code={modalContent} />
         </div>
